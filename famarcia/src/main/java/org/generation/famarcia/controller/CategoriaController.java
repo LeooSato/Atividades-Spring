@@ -1,8 +1,9 @@
-package org.generation.loja.controller;
+package org.generation.famarcia.controller;
 
 import java.util.*;
-import org.generation.loja.model.Categoria;
-import org.generation.loja.repository.CategoriaRepository;
+
+import org.generation.famarcia.model.Categoria;
+import org.generation.famarcia.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,7 @@ public class CategoriaController {
     @GetMapping("/descricao/{descricao}")
     public ResponseEntity<List<Categoria>> GetByTipo(@PathVariable String descricao){
 
-        return ResponseEntity.ok(CategoriaRep.findAllBydescricaoContainingIgnoreCase(descricao));
+        return ResponseEntity.ok(CategoriaRep.findAllByDescricaoContainingIgnoreCase(descricao));
     }
 
     @PostMapping
